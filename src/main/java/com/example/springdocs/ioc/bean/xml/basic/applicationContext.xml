@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="testBean" class="com.example.springdocs.ioc.bean.xml.basic.TestBean">
+        <!-- property > setter 메서드를 이용해 값을 전달 -->
+        <property name="message" value="test message!"/>
+        <!-- 생성자를 호출 -->
+        <constructor-arg value="test text!"/>
+    </bean>
+    <!-- import 를 통해 importTest.xml 에 정의된 bean 을 등록한다 -->
+    <import resource="import.xml"></import>
+
+</beans>

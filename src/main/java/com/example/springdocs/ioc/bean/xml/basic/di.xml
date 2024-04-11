@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean id="diBean" class="com.example.springdocs.ioc.bean.xml.basic.DiBean">
+        <!-- property > setter 메서드를 이용해 값을 전달 -->
+        <property name="message" value="========== DI TestBean Call"/>
+        <!-- setter를 이용해 importBean을 전달(setter 주입) -->
+        <property name="importBean" ref="importBean"/>
+        <!-- 생성자를 호출 파라미터로 testBean을 전달(생성자 주입) -->
+        <constructor-arg ref="testBean"></constructor-arg>
+    </bean>
+
+</beans>
